@@ -34,7 +34,7 @@ build:
     - script:
         name: go smoke build
         code: |
-          godep go build ./cmd/logvacuum/*.go 
+          godep go build ./cli/pezgc/*.go 
 
     - script:
         name: cross platform build
