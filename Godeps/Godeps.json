@@ -4,5 +4,15 @@
 	"Packages": [
 		"./..."
 	],
-	"Deps": []
+	"Deps": [
+		{
+			"ImportPath": "github.com/pivotalservices/pezdispenser/cloudfoundryclient",
+			"Comment": "0.0.1-62-g18ccd4f",
+			"Rev": "18ccd4f52737226c7922177a621d50158e466548"
+		},
+		{
+			"ImportPath": "github.com/xchapter7x/cloudcontroller-client",
+			"Rev": "795e287327dd3faa6a5b65e000779cffe301cb3a"
+		}
+	]
 }
