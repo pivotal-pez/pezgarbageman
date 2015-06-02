@@ -6,6 +6,8 @@ import (
 	"net/url"
 	"os"
 
+	"github.com/codegangsta/cli"
+
 	cf "github.com/pivotalservices/pezdispenser/cloudfoundryclient"
 	"github.com/xchapter7x/cloudcontroller-client"
 )
@@ -28,6 +30,11 @@ func (s *heritage) CCTarget() string {
 }
 
 func main() {
+	app := NewApp()
+	app.Run(os.Args)
+}
+
+func main1() {
 	baseURI := os.Getenv("CF_DOMAIN")
 	user := os.Getenv("CF_USER")
 	pass := os.Getenv("CF_PASS")
@@ -41,10 +48,24 @@ func main() {
 	cfclient := cf.NewCloudFoundryClient(heritageClient, new(logger))
 	cfclient.QueryAPIInfo()
 	u, _ := cfclient.QueryUsers(1, 1, "id", "")
-	users, _ := cfclient.QueryUsers(1, u.TotalResults, "userName,meta", url.QueryEscape("origin eq 'uaa'"))
+	users, _ := cfclient.QueryUsers(1, u.TotalResults, "userName,meta", url.QueryEscape("origin eq 'uaa' and userName eq 'calabrese.john@gmail.com'"))
 
 	for _, v := range users.Resources {
 		fmt.Printf("Created: %s Modified: %s User: %s\n", v.Meta["created"], v.Meta["lastModified"], v.UserName)
 	}
-	fmt.Println("UAA Users Found: ", users.TotalResults)
+	fmt.Println("Users Found: ", users.TotalResults)
+}
+
+// NewApp creates a new cli app
+func NewApp() *cli.App {
+
+	app := cli.NewApp()
+	app.Name = "pezgc"
+	app.Usage = "allows for auditing and purging assets in pez. a system wide garbage man service"
+	app.Commands = append(app.Commands, []cli.Command{
+		showCli,
+		purgeCli,
+	}...)
+
+	return app
 }
