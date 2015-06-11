@@ -64,7 +64,7 @@ func getList(usertype, username, cfDomain, cfUser, cfPass string) {
 	users, _ := userSearch.List(usertype, username)
 
 	for _, v := range users.Resources {
-		fmt.Printf("Created: %s Modified: %s User: %s\n", v.Meta["created"], v.Meta["lastModified"], v.UserName)
+		fmt.Printf("Type:%s User: %s\n", v.Origin, v.UserName)
 	}
 	fmt.Println("Users Found: ", users.TotalResults)
 }

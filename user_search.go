@@ -37,7 +37,7 @@ func (s *UserSearch) List(usertype, username string) (users cf.UserAPIResponse, 
 
 	if u, err = s.Client.QueryUsers(1, 1, "id", ""); err == nil {
 		query := s.BuildQuery(usertype, username)
-		users, err = s.Client.QueryUsers(1, u.TotalResults, "userName,meta", query)
+		users, err = s.Client.QueryUsers(1, u.TotalResults, "", query)
 	}
 	return
 }
