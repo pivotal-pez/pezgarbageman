@@ -39,7 +39,7 @@ build:
     - script:
         name: cross platform build
         code: |
-          GOPATH=$(pwd)/Godeps/_workspace/:$GOPATH gox -verbose -output="build/{{.Dir}}_{{.OS}}_{{.Arch}}" -os="linux darwin" ./... 
+          GOPATH=$(pwd)/Godeps/_workspace/:$GOPATH gox -verbose -output="build/{{.Dir}}_{{.OS}}_{{.Arch}}" -os="linux darwin windows" ./... 
 
     - script:
         name: add repo to artifact
