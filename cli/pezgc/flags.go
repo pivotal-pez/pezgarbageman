@@ -19,4 +19,22 @@ var vacuumFlags = []cli.Flag{
 		Usage:  usernameDescr,
 		EnvVar: "",
 	},
+	cli.StringFlag{
+		Name:   strings.Join(cfdomainFlag, ", "),
+		Value:  "",
+		Usage:  cfdomainDescr,
+		EnvVar: cfdomainEnv,
+	},
+	cli.StringFlag{
+		Name:   strings.Join(cfuserFlag, ", "),
+		Value:  "",
+		Usage:  cfuserDescr,
+		EnvVar: cfuserEnv,
+	},
+	cli.StringFlag{
+		Name:   strings.Join(cfpassFlag, ", "),
+		Value:  "",
+		Usage:  cfpassDescr,
+		EnvVar: cfpassEnv,
+	},
 }

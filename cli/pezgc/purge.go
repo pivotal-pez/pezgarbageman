@@ -19,7 +19,7 @@ var purgeCli = cli.Command{
 			userName = c.String(usernameFlag[0])
 		)
 
-		if false == true {
+		if userType != "" || userName != "" {
 			fmt.Println(userType, userName)
 
 		} else {

@@ -17,10 +17,13 @@ var showCli = cli.Command{
 			err      error
 			userType = c.String(usertypeFlag[0])
 			userName = c.String(usernameFlag[0])
+			cfDomain = c.String(cfdomainFlag[0])
+			cfUser   = c.String(cfuserFlag[0])
+			cfPass   = c.String(cfpassFlag[0])
 		)
 
-		if false == true {
-			fmt.Println(userType, userName)
+		if userType != "" || userName != "" {
+			getList(userType, userName, cfDomain, cfUser, cfPass)
 
 		} else {
 			cli.ShowCommandHelp(c, show_full_name)

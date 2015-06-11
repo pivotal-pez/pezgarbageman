@@ -11,6 +11,16 @@
 			"Rev": "61f43e76957561f52674f48b7dc9a07f53c8f398"
 		},
 		{
+			"ImportPath": "github.com/onsi/ginkgo",
+			"Comment": "v1.1.0-30-g5ce32b7",
+			"Rev": "5ce32b7910cdddcdd8bac6d761e2de9f27f9377b"
+		},
+		{
+			"ImportPath": "github.com/onsi/gomega",
+			"Comment": "v1.0-26-gdc751ce",
+			"Rev": "dc751ce5f266d83c26fae5c0a9093973b29cb61d"
+		},
+		{
 			"ImportPath": "github.com/pivotalservices/pezdispenser/cloudfoundryclient",
 			"Comment": "0.0.1-65-g8fa792e",
 			"Rev": "8fa792ed1400fd6cfd4e8b9270bac91d591fe361"
